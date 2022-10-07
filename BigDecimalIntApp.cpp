@@ -1,8 +1,6 @@
-#include <iostream>
-
-using namespace std;
+#include "BigDecimalIntFunctions.cpp"
 
 int main() {
-    
+
     return 0;
 }
