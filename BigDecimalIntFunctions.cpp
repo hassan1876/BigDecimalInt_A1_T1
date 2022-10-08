@@ -117,7 +117,7 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
     } else {
         str1 = this->decimalStr;
     }
-    
+
 
     if (anotherDec.sign() == 1 || anotherDec.sign() == -1) {
         for (int i = 1; i < anotherDec.decimalStr.length(); i++) {

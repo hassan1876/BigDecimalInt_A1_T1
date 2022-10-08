@@ -17,15 +17,11 @@ int main() {
     cout << bI5 << endl;
     cout << bI1.sign() << endl;
 
-    if (bI1 > bI5){
-        cout << "OK";
-    }
-
-    if(bI1 > bI5) {
+    if (bI1 > bI5) {
         cout << "Yes" << endl;
     } else {
         cout << "no" << endl;
     }
-    
+
     return 0;
 }
