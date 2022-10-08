@@ -11,8 +11,8 @@ using namespace std;
 
 class BigDecimalInt {
 private:
-    string decStr;
-    int decInt;
+    string decimalStr;
+    int decimalInt;
 
 public:
     inline BigDecimalInt(string decStr); // Initializes from string & rejects bad input
