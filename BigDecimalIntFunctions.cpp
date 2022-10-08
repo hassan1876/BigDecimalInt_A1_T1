@@ -233,3 +233,10 @@ ostream &operator<<(ostream &out, BigDecimalInt b) {
 
     return out;
 }
+
+// Youssef
+string BigDecimalInt::getDecimalStr(){
+
+    return decimalStr;
+
+}
