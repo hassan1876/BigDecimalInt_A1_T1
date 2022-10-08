@@ -21,5 +21,11 @@ int main() {
         cout << "OK";
     }
 
+    if(bI1 > bI5) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "no" << endl;
+    }
+    
     return 0;
 }
