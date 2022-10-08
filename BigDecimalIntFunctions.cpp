@@ -29,12 +29,143 @@ BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec) {
 
 // 'e'
 bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
-    return false;
+    string str1 = "";
+    string str2 = "";
+
+    if(this->sign() == -1 && anotherDec.sign() != -1) {
+        return true;
+    }
+
+    if(this->sign() != -1 && anotherDec.sign() == -1) {
+        return false;
+    }
+
+    if(this->sign() == 1 || this->sign() == -1) {
+        for(int i = 1; i < this->decimalStr.length(); i++) {
+            str1 +=  this->decimalStr[i];
+        }
+    }
+
+    if(anotherDec.sign() == 1 || anotherDec.sign() == -1) {
+        for(int i = 1; i < anotherDec.decimalStr.length(); i++) {
+            str2 +=  anotherDec.decimalStr[i];
+        }
+    }
+
+
+
+    if(anotherDec.sign() != -1) {
+        if(str1.length() > str2.length()) {
+            return false;
+        } else if (str1.length() < str2.length()){
+            return true;
+        } else {
+            string num1;
+            string num2;
+            for(int i = 0; i < str1.length(); i++) {
+                num1 = str1[i];
+                num2 = str2[i];
+                if(stoi(num1) > stoi(num2)) {
+                    return false;
+                } else if (stoi(num1) < stoi(num2)) {
+                    return true;
+                } else {
+                    continue;
+                }
+            }
+        }
+    } else if(anotherDec.sign() == -1) {
+        if(str1.length() > str2.length()) {
+            return true;
+        } else if (str1.length() < str2.length()){
+            return false;
+        } else {
+            string num1;
+            string num2;
+            for(int i = 0; i < str1.length(); i++) {
+                num1 = str1[i];
+                num2 = str2[i];
+                if(stoi(num1) > stoi(num2)) {
+                    return true;
+                } else if (stoi(num1) < stoi(num2)) {
+                    return false;
+                } else {
+                    continue;
+                }
+            }
+        }
+    }
 }
 
 // 'f'
 bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
-    return false;
+
+    string str1 = "";
+    string str2 = "";
+
+    if(this->sign() == -1 && anotherDec.sign() != -1) {
+        return false;
+    }
+
+    if(this->sign() != -1 && anotherDec.sign() == -1) {
+        return true;
+    }
+
+    if(this->sign() == 1 || this->sign() == -1) {
+        for(int i = 1; i < this->decimalStr.length(); i++) {
+            str1 +=  this->decimalStr[i];
+        }
+    }
+
+    if(anotherDec.sign() == 1 || anotherDec.sign() == -1) {
+        for(int i = 1; i < anotherDec.decimalStr.length(); i++) {
+            str2 +=  anotherDec.decimalStr[i];
+        }
+    }
+
+
+
+    if(anotherDec.sign() != -1) {
+        if(str1.length() > str2.length()) {
+            return true;
+        } else if (str1.length() < str2.length()){
+            return false;
+        } else {
+            string num1;
+            string num2;
+            for(int i = 0; i < str1.length(); i++) {
+                num1 = str1[i];
+                num2 = str2[i];
+                if(stoi(num1) > stoi(num2)) {
+                    return true;
+                } else if (stoi(num1) < stoi(num2)) {
+                    return false;
+                } else {
+                    continue;
+                }
+            }
+        }
+    } else if(anotherDec.sign() == -1) {
+        if(str1.length() > str2.length()) {
+            return false;
+        } else if (str1.length() < str2.length()){
+            return true;
+        } else {
+            string num1;
+            string num2;
+            for(int i = 0; i < str1.length(); i++) {
+                num1 = str1[i];
+                num2 = str2[i];
+                if(stoi(num1) > stoi(num2)) {
+                    return false;
+                } else if (stoi(num1) < stoi(num2)) {
+                    return true;
+                } else {
+                    continue;
+                }
+            }
+        }
+    }
 }
 
 // 'g'
