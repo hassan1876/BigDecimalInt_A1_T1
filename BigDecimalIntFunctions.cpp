@@ -43,24 +43,62 @@ bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
 }
 
 // 'h'
+// Youssef
 BigDecimalInt BigDecimalInt::operator=(BigDecimalInt anotherDec) {
-//    return ;
+
+    decimalStr = anotherDec.decimalStr;
+    decimalInt = anotherDec.decimalInt;
+    decimalSign = anotherDec.decimalSign;
+
+    return *this;
 }
 
 // 'i'
+// Youssef
 int BigDecimalInt::size() {
-    return 0;
+
+    return this->decimalStr.length();
+
 }
 
 // 'j'
+// Youssef
 int BigDecimalInt::sign() {
-    return 0;
+
+    if (decimalStr[0] == '+') {
+
+        decimalSign = 1;
+
+    } else if (isdigit(decimalStr[0])) {
+
+        decimalSign = 0;
+
+    } else{
+
+        decimalSign = -1;
+
+    }
+
+    return decimalSign;
 }
 
 // 'k'
+// Youssef
 ostream &operator<<(ostream &out, BigDecimalInt b) {
 
-    out << b.decimalStr;
+    if (b.sign() == 1) {
+
+        for (int i = 1; i < b.size(); ++i) {
+
+            out << b.decimalStr[i];
+
+        }
+
+    } else {
+
+        out << b.decimalStr;
+
+    }
 
     return out;
 }

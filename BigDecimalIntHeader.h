@@ -13,6 +13,7 @@ class BigDecimalInt {
 private:
     string decimalStr;
     int decimalInt;
+    int decimalSign;
 
 public:
     inline BigDecimalInt(string decStr); // Initializes from string & rejects bad input
