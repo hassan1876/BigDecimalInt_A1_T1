@@ -30,4 +30,7 @@ public:
     inline int sign(); // member fn
 
     inline friend ostream &operator<<(ostream &out, BigDecimalInt b);
+
+    inline string getDecimalStr(); // encapsulation
+
 };
