@@ -32,40 +32,39 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
     string str1 = "";
     string str2 = "";
 
-    if(this->sign() == -1 && anotherDec.sign() != -1) {
+    if (this->sign() == -1 && anotherDec.sign() != -1) {
         return true;
     }
 
-    if(this->sign() != -1 && anotherDec.sign() == -1) {
+    if (this->sign() != -1 && anotherDec.sign() == -1) {
         return false;
     }
 
-    if(this->sign() == 1 || this->sign() == -1) {
-        for(int i = 1; i < this->decimalStr.length(); i++) {
-            str1 +=  this->decimalStr[i];
+    if (this->sign() == 1 || this->sign() == -1) {
+        for (int i = 1; i < this->decimalStr.length(); i++) {
+            str1 += this->decimalStr[i];
         }
     }
 
-    if(anotherDec.sign() == 1 || anotherDec.sign() == -1) {
-        for(int i = 1; i < anotherDec.decimalStr.length(); i++) {
-            str2 +=  anotherDec.decimalStr[i];
+    if (anotherDec.sign() == 1 || anotherDec.sign() == -1) {
+        for (int i = 1; i < anotherDec.decimalStr.length(); i++) {
+            str2 += anotherDec.decimalStr[i];
         }
     }
 
 
-
-    if(anotherDec.sign() != -1) {
-        if(str1.length() > str2.length()) {
+    if (anotherDec.sign() != -1) {
+        if (str1.length() > str2.length()) {
             return false;
-        } else if (str1.length() < str2.length()){
+        } else if (str1.length() < str2.length()) {
             return true;
         } else {
             string num1;
             string num2;
-            for(int i = 0; i < str1.length(); i++) {
+            for (int i = 0; i < str1.length(); i++) {
                 num1 = str1[i];
                 num2 = str2[i];
-                if(stoi(num1) > stoi(num2)) {
+                if (stoi(num1) > stoi(num2)) {
                     return false;
                 } else if (stoi(num1) < stoi(num2)) {
                     return true;
@@ -74,18 +73,18 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
                 }
             }
         }
-    } else if(anotherDec.sign() == -1) {
-        if(str1.length() > str2.length()) {
+    } else if (anotherDec.sign() == -1) {
+        if (str1.length() > str2.length()) {
             return true;
-        } else if (str1.length() < str2.length()){
+        } else if (str1.length() < str2.length()) {
             return false;
         } else {
             string num1;
             string num2;
-            for(int i = 0; i < str1.length(); i++) {
+            for (int i = 0; i < str1.length(); i++) {
                 num1 = str1[i];
                 num2 = str2[i];
-                if(stoi(num1) > stoi(num2)) {
+                if (stoi(num1) > stoi(num2)) {
                     return true;
                 } else if (stoi(num1) < stoi(num2)) {
                     return false;
@@ -103,44 +102,44 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
     string str1 = "";
     string str2 = "";
 
-    if(this->sign() == -1 && anotherDec.sign() != -1) {
+    if (this->sign() == -1 && anotherDec.sign() != -1) {
         return false;
     }
 
-    if(this->sign() != -1 && anotherDec.sign() == -1) {
+    if (this->sign() != -1 && anotherDec.sign() == -1) {
         return true;
     }
 
-    if(this->sign() == 1 || this->sign() == -1) {
-        for(int i = 1; i < this->decimalStr.length(); i++) {
-            str1 +=  this->decimalStr[i];
+    if (this->sign() == 1 || this->sign() == -1) {
+        for (int i = 1; i < this->decimalStr.length(); i++) {
+            str1 += this->decimalStr[i];
         }
     } else {
         str1 = this->decimalStr;
     }
     
 
-    if(anotherDec.sign() == 1 || anotherDec.sign() == -1) {
-        for(int i = 1; i < anotherDec.decimalStr.length(); i++) {
-            str2 +=  anotherDec.decimalStr[i];
+    if (anotherDec.sign() == 1 || anotherDec.sign() == -1) {
+        for (int i = 1; i < anotherDec.decimalStr.length(); i++) {
+            str2 += anotherDec.decimalStr[i];
         }
     } else {
         str2 = anotherDec.decimalStr;
     }
 
 
-    if(anotherDec.sign() != -1) {
-        if(str1.length() > str2.length()) {
+    if (anotherDec.sign() != -1) {
+        if (str1.length() > str2.length()) {
             return true;
-        } else if (str1.length() < str2.length()){
+        } else if (str1.length() < str2.length()) {
             return false;
         } else {
             string num1;
             string num2;
-            for(int i = 0; i < str1.length(); i++) {
+            for (int i = 0; i < str1.length(); i++) {
                 num1 = str1[i];
                 num2 = str2[i];
-                if(stoi(num1) > stoi(num2)) {
+                if (stoi(num1) > stoi(num2)) {
                     return true;
                 } else if (stoi(num1) < stoi(num2)) {
                     return false;
@@ -149,18 +148,18 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
                 }
             }
         }
-    } else if(anotherDec.sign() == -1) {
-        if(str1.length() > str2.length()) {
+    } else if (anotherDec.sign() == -1) {
+        if (str1.length() > str2.length()) {
             return false;
-        } else if (str1.length() < str2.length()){
+        } else if (str1.length() < str2.length()) {
             return true;
         } else {
             string num1;
             string num2;
-            for(int i = 0; i < str1.length(); i++) {
+            for (int i = 0; i < str1.length(); i++) {
                 num1 = str1[i];
                 num2 = str2[i];
-                if(stoi(num1) > stoi(num2)) {
+                if (stoi(num1) > stoi(num2)) {
                     return false;
                 } else if (stoi(num1) < stoi(num2)) {
                     return true;
@@ -208,7 +207,7 @@ int BigDecimalInt::sign() {
 
         decimalSign = 0;
 
-    } else{
+    } else {
 
         decimalSign = -1;
 
@@ -239,7 +238,7 @@ ostream &operator<<(ostream &out, BigDecimalInt b) {
 }
 
 // Youssef
-string BigDecimalInt::getDecimalStr(){
+string BigDecimalInt::getDecimalStr() {
 
     return decimalStr;
 
