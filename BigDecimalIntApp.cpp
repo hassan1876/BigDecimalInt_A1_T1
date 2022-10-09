@@ -2,12 +2,8 @@
 
 int main() {
 
-    BigDecimalInt bI1("-99");
-    BigDecimalInt bI2(-88);
-
-    // testing 'k'
-    cout << bI1;
-    cout << bI2;
-
+    BigDecimalInt bI1("299");
+    BigDecimalInt bI2("188");
+    
     return 0;
 }

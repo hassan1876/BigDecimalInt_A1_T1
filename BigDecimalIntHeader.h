@@ -4,6 +4,8 @@
 #endif //BIGDECIMALINT_A1_T1_BIGDECIMALINTHEADER_H
 
 #include <iostream>
+#include <regex>
+#include <string>
 
 using namespace std;
 
