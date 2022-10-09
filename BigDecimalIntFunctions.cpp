@@ -77,6 +77,7 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
                     continue;
                 }
             }
+            return false;
         }
     } else if (anotherDec.sign() == -1) {
         if (str1.length() > str2.length()) {
@@ -97,6 +98,7 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
                     continue;
                 }
             }
+            return false;
         }
     }
 }
@@ -153,6 +155,7 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
                     continue;
                 }
             }
+            return false;
         }
     } else if (anotherDec.sign() == -1) {
         if (str1.length() > str2.length()) {
@@ -173,6 +176,7 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
                     continue;
                 }
             }
+            return false;
         }
     }
 }
