@@ -3,6 +3,7 @@
 // Defining functions, class methods
 
 // 'a'
+// Hassan
 BigDecimalInt::BigDecimalInt(string decStr) {
 
     decimalStr = decStr;
@@ -10,6 +11,7 @@ BigDecimalInt::BigDecimalInt(string decStr) {
 }
 
 // 'b'
+// Hassan
 BigDecimalInt::BigDecimalInt(int decInt) {
 
     decimalInt = decInt;
@@ -18,16 +20,19 @@ BigDecimalInt::BigDecimalInt(int decInt) {
 }
 
 // 'c'
+// Hassan
 BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec) {
 //    return ;
 }
 
 // 'd'
+// Hassan
 BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec) {
 //    return ;
 }
 
 // 'e'
+// Seif
 bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
     string str1 = "";
     string str2 = "";
@@ -97,6 +102,7 @@ bool BigDecimalInt::operator<(BigDecimalInt anotherDec) {
 }
 
 // 'f'
+// Seif
 bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
 
     string str1 = "";
@@ -172,6 +178,7 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
 }
 
 // 'g'
+// Seif
 bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
     return false;
 }
