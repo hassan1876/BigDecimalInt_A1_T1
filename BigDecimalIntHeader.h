@@ -32,5 +32,8 @@ public:
     inline friend ostream &operator<<(ostream &out, BigDecimalInt b);
 
     inline string getDecimalStr(); // encapsulation
+    inline void setDecimalStr(string decStr); // encapsulation
+
+    inline BigDecimalInt();
 
 };

@@ -8,6 +8,9 @@ int main() {
     BigDecimalInt bI4("+254");
     BigDecimalInt bI5("254");
 
+    BigDecimalInt bI6;
+    bI6.setDecimalStr("538");
+
 //    bI2 = bI1;
 
     cout << bI1 << endl;
@@ -15,6 +18,7 @@ int main() {
     cout << bI3 << endl;
     cout << bI4 << endl;
     cout << bI5 << endl;
+    cout << bI6 << endl;
     cout << bI2.sign() << endl;
 
     if (bI1 > bI5) {

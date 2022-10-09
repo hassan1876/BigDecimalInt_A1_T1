@@ -250,3 +250,11 @@ string BigDecimalInt::getDecimalStr() {
     return decimalStr;
 
 }
+
+void BigDecimalInt::setDecimalStr(string decStr){
+
+    decimalStr = decStr;
+
+}
+
+BigDecimalInt::BigDecimalInt(){}
