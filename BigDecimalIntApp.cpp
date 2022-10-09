@@ -27,5 +27,8 @@ int main() {
         cout << "no" << endl;
     }
 
+    BigDecimalInt bI7 = bI1 + bI5;
+    cout << bI7;
+
     return 0;
 }
