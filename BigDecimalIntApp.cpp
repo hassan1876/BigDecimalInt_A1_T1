@@ -21,7 +21,7 @@ int main() {
     cout << bI6 << endl;
     cout << bI2.sign() << endl;
 
-    if (bI5 > bI4) {
+    if (bI3 == bI4) {
         cout << "Yes" << endl;
     } else {
         cout << "no" << endl;
