@@ -308,7 +308,51 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
 // 'g'
 // Seif
 bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
-    return false;
+
+    string str1 = "";
+    string str2 = "";
+
+    if (this->sign() == -1 && anotherDec.sign() != -1) {
+        return false;
+    }
+
+    if (this->sign() != -1 && anotherDec.sign() == -1) {
+        cout << "Str1 = " << str1 << endl;
+    cout << "Str2 = " << str2 << endl;
+        return false;
+    }
+
+    if (this->sign() == 1 || this->sign() == -1) {
+        for (int i = 1; i < this->decimalStr.length(); i++) {
+            str1 += this->decimalStr[i];
+        }
+    } else {
+        str1 = this->decimalStr;
+    }
+
+
+    if (anotherDec.sign() == 1 || anotherDec.sign() == -1) {
+        for (int i = 1; i < anotherDec.decimalStr.length(); i++) {
+            str2 += anotherDec.decimalStr[i];
+        }
+    } else {
+        str2 = anotherDec.decimalStr;
+    }
+
+
+    
+    if(str1.length() != str1.length()) {
+        return false;
+    } else {
+        for(int i = 0; i < str1.length(); i++) {
+            if(str1[i] != str2[i]) {
+                return false;
+            } else {
+                continue;
+            }
+        }
+        return true;
+    }
 }
 
 // 'h'
