@@ -15,7 +15,7 @@ int main() {
     cout << bI3 << endl;
     cout << bI4 << endl;
     cout << bI5 << endl;
-    cout << bI1.sign() << endl;
+    cout << bI2.sign() << endl;
 
     if (bI1 > bI5) {
         cout << "Yes" << endl;

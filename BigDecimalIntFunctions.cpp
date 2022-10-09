@@ -15,7 +15,7 @@ BigDecimalInt::BigDecimalInt(string decStr) {
 BigDecimalInt::BigDecimalInt(int decInt) {
 
     decimalInt = decInt;
-//    decimalStr = to_string(decInt);
+    decimalStr = to_string(decInt);
 
 }
 
