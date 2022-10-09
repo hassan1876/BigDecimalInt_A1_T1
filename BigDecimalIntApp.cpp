@@ -30,5 +30,11 @@ int main() {
     BigDecimalInt bI7 = bI1 + bI5;
     cout << bI7;
 
+    if (bI4 == bI5){
+        cout << "Yes" << endl;
+    } else {
+        cout << "no" << endl;
+    }
+
     return 0;
 }
