@@ -6,7 +6,36 @@
 // Hassan
 BigDecimalInt::BigDecimalInt(string decStr) {
 
-    decimalStr = decStr;
+    regex filter("^[+-]?[0-9]+");
+    if (regex_match(decStr, filter)) {
+
+        int i = 0;
+        if (decStr[0] == '+' || decStr[0] == '-') {
+
+            decimalStr += decStr[0];
+            i = 1;
+
+        }
+
+        for (; i < decStr.length(); ++i) {
+
+            if (decStr[i] != '0'){
+                break;
+            }
+
+        }
+
+        for (; i < decStr.length(); ++i) {
+
+            decimalStr+= decStr[i];
+
+        }
+
+
+    } else {
+        cout << "Invalid Input";
+    }
+
 
 }
 
