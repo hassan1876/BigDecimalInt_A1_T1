@@ -7,6 +7,7 @@
 #include <regex>
 #include <string>
 
+
 using namespace std;
 
 // Prototypes, Constants and Classes
@@ -15,6 +16,7 @@ class BigDecimalInt {
 private:
     string decimalStr;
     int decimalInt;
+    int decimalSign;
 
 public:
     inline BigDecimalInt(string decStr); // Initializes from string & rejects bad input
@@ -31,4 +33,10 @@ public:
     inline int sign(); // member fn
 
     inline friend ostream &operator<<(ostream &out, BigDecimalInt b);
+
+    inline string getDecimalStr(); // encapsulation
+    inline void setDecimalStr(string decStr); // encapsulation
+
+    inline BigDecimalInt();
+
 };
