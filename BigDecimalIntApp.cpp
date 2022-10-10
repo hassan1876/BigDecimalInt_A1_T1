@@ -2,8 +2,8 @@
 
 int main() {
 
-    BigDecimalInt bI1("299");
-    BigDecimalInt bI2("188");
-    
+    BigDecimalInt bI1("-100");
+    BigDecimalInt bI2("10");
+    cout<<bI1+bI2;
     return 0;
 }
