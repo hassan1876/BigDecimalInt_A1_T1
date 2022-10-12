@@ -56,10 +56,10 @@ BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec) {
     int rmndr=0;
     int intNum1,intNum2,intresult,addedzero;
     string StrNum1 = this->decimalStr,StrNum2=anotherDec.decimalStr,result="",chtostr,strresult;
-    if(sign1<0){
+    if(sign1<0||sign1>0){
         StrNum1[0]='0';
     }
-    if(sign2<0){
+    if(sign2<0||sign2>0){
         StrNum2[0]='0';
     }
     if(StrNum1.size()!=StrNum2.size())
@@ -124,6 +124,30 @@ BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec) {
         if(sign1<sign2){
             swap(StrNum1,StrNum2);
         }
+        if(StrNum2>StrNum1){
+            swap(StrNum1,StrNum2);
+            for(int i=StrNum1.size()-1;i>-1;i--){
+            chtostr=StrNum1[i];
+            intNum1=stoi(chtostr);
+            chtostr=StrNum2[i];
+            intNum2=stoi(chtostr);
+            if(rmndr>0){
+                intNum1-=rmndr;
+                rmndr--;
+            }
+            if(intNum1<intNum2){
+                intresult=(intNum1+10)-intNum2;
+                rmndr++;
+            }
+            else{
+            intresult=intNum1-intNum2;
+            }
+            strresult=to_string(intresult);
+            result=strresult+result;
+        }
+        // result="-"+result;
+        return result;
+        }
         for(int i=StrNum1.size()-1;i>-1;i--){
             chtostr=StrNum1[i];
             intNum1=stoi(chtostr);
@@ -153,7 +177,107 @@ BigDecimalInt BigDecimalInt::operator+(BigDecimalInt anotherDec) {
 // 'd'
 // Hassan
 BigDecimalInt BigDecimalInt::operator-(BigDecimalInt anotherDec) {
-    return anotherdec;
+    int sign1 = this->sign();
+    int sign2 = anotherDec.sign();
+    int rmndr=0;
+    int intNum1,intNum2,intresult,addedzero;
+    string StrNum1 = this->decimalStr,StrNum2=anotherDec.decimalStr,result="",chtostr,strresult;
+    if(sign1<0||sign1>0){
+        StrNum1[0]='0';
+    }
+    if(sign2<0||sign2>0){
+        StrNum2[0]='0';
+    }
+    if(StrNum1.size()!=StrNum2.size())
+        if(StrNum1.size()>StrNum2.size()){
+            int addedzero=StrNum1.size()-StrNum2.size();
+            for(int i=0;i<addedzero;i++){
+                StrNum2="0"+StrNum2;
+            }
+        }
+        else{
+            int addedzero=StrNum2.size()-StrNum1.size();
+            for(int i=0;i<addedzero;i++){
+                StrNum1="0"+StrNum1;
+            }
+        }
+    //first case
+    if((sign1>=0 && sign2>=0)||(sign1<0 &&sign2<0)){
+        if(StrNum2>StrNum1){
+            swap(StrNum1,StrNum2);
+            for(int i=StrNum1.size()-1;i>-1;i--){
+            chtostr=StrNum1[i];
+            intNum1=stoi(chtostr);
+            chtostr=StrNum2[i];
+            intNum2=stoi(chtostr);
+            if(rmndr>0){
+                intNum1-=rmndr;
+                rmndr--;
+            }
+            if(intNum1<intNum2){
+                intresult=(intNum1+10)-intNum2;
+                rmndr++;
+            }
+            else{
+            intresult=intNum1-intNum2;
+            }
+            strresult=to_string(intresult);
+            result=strresult+result;
+            }
+            result="-"+result;
+            return result;    
+        }
+        for(int i=StrNum1.size()-1;i>-1;i--){
+            chtostr=StrNum1[i];
+            intNum1=stoi(chtostr);
+            chtostr=StrNum2[i];
+            intNum2=stoi(chtostr);
+            if(rmndr>0){
+                intNum1-=rmndr;
+                rmndr--;
+            }
+            if(intNum1<intNum2){
+                intresult=(intNum1+10)-intNum2;
+                rmndr++;
+            }
+            else{
+                intresult=intNum1-intNum2;
+            }
+            strresult=to_string(intresult);
+            result=strresult+result;
+        }
+        if(sign1<0){
+            result="-"+result;
+        }
+        return result;
+    }
+    //case 2
+    else{
+        if(sign2<0||sign1<0){
+            for(int i=StrNum1.size()-1;i>-1;i--){
+                chtostr=StrNum1[i];
+                intNum1=stoi(chtostr);
+                intNum1+=rmndr;
+                if(rmndr>0){
+                    rmndr--;
+                }
+                chtostr=StrNum2[i];
+                intNum2=stoi(chtostr);
+                intresult=intNum1+intNum2;
+                if(intresult>=10 && i!=0){
+                    intresult-=10;
+                    rmndr++;
+                }
+                strresult=to_string(intresult);
+                result=strresult+result;
+            }
+            if(sign1<0){
+                result="-"+result;
+            }
+        return result;
+        }
+    }    
+    return anotherDec;
 }
 
 // 'e'
